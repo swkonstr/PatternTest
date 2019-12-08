@@ -23,13 +23,9 @@ namespace PatternTest
                 Tile tile = new Tile();
                 foreach (XmlNode childnode in xnode.ChildNodes)
                 {
-                    if (childnode.Name == "Discovered")
+                    if (childnode.Name == "PlanetTypes")
                     {
-                        tile.Discovered=bool.Parse(childnode.InnerText);
-                    }
-                    if (childnode.Name == "PlanetType")
-                    {
-                        tile.PlanetType = childnode.InnerText;
+                        tile.PlanetTypes = childnode.InnerText;
                     }
                     if (childnode.Name == "Name")
                     {
@@ -47,45 +43,21 @@ namespace PatternTest
                     {
                         tile.DescriptionIndex = int.Parse(childnode.InnerText);
                     }
-                    if (childnode.Name == "ReproductionMod")
+                    if (childnode.Name == "Population")
                     {
-                        tile.ReproductionMod = int.Parse(childnode.InnerText);
+                        tile.Population = ushort.Parse(childnode.InnerText);
                     }
-                    if (childnode.Name == "ShieldPenBonus")
+                    if (childnode.Name == "Production")
                     {
-                        tile.ShieldPenBonus = int.Parse(childnode.InnerText);
+                        tile.Production = ushort.Parse(childnode.InnerText);
                     }
-                    if (childnode.Name == "FertilityMod")
+                    if (childnode.Name == "Fertility")
                     {
-                        tile.FertilityMod = int.Parse(childnode.InnerText);
+                        tile.Fertility = ushort.Parse(childnode.InnerText);
                     }
-                    if (childnode.Name == "ProductionMod")
+                    if (childnode.Name == "Energy")
                     {
-                        tile.ProductionMod = int.Parse(childnode.InnerText);
-                    }
-                    if (childnode.Name == "GroundCombatMod")
-                    {
-                        tile.GroundCombatMod = int.Parse(childnode.InnerText);
-                    }
-                    if (childnode.Name == "ResearchMod")
-                    {
-                        tile.ResearchMod = int.Parse(childnode.InnerText);
-                    }
-                    if (childnode.Name == "PlusFlatMoney")
-                    {
-                        tile.PlusFlatMoney = int.Parse(childnode.InnerText);
-                    }
-                    if (childnode.Name == "DiplomacyMod")
-                    {
-                        tile.DiplomacyMod = int.Parse(childnode.InnerText);
-                    }
-                    if (childnode.Name == "SensorMod")
-                    {
-                        tile.SensorMod = int.Parse(childnode.InnerText);
-                    }
-                    if (childnode.Name == "ModuleHPMod")
-                    {
-                        tile.ModuleHPMod = int.Parse(childnode.InnerText);
+                        tile.Energy = ushort.Parse(childnode.InnerText);
                     }
                 }
                 tiles_arr.Add(tile);

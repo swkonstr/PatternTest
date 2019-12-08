@@ -31,7 +31,7 @@ namespace PatternTest
             List<Tile> tiles_arr = TilesArrInit.ReadFile();
 
 
-            Planet plnt = new Planet("PlanetName", 3, 3, tiles_arr);
+            Planet plnt = new Planet(generator.GenerateRandomName(), 3, 3, tiles_arr);
 
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("Планета: " + plnt.name);
@@ -41,8 +41,8 @@ namespace PatternTest
             {
                 Console.WriteLine("Район: " + tile.Name);
                 Console.WriteLine("Описание: " + tile.Description);
-                Console.WriteLine("Плодоносность: " + tile.FertilityMod.ToString());
-                Console.WriteLine("Продуктивность: " + tile.ProductionMod.ToString());
+                Console.WriteLine("Плодоносность: " + tile.Fertility.ToString());
+                Console.WriteLine("Продуктивность: " + tile.Production.ToString());
             }
             Console.WriteLine("\n\n");
 
